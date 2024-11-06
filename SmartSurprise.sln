@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSurprise.Web", "SmartS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSurprise.Data", "SmartSurprise.Data\SmartSurprise.Data.csproj", "{CD7C87CE-68C1-4741-859A-234FD37F8BD7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSurprise.Entities", "SmartSurprise.Entities\SmartSurprise.Entities.csproj", "{39B15733-F141-47A1-A75A-A14DAC9AAABB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartSurprise.Core", "SmartSurprise.Core\SmartSurprise.Core.csproj", "{FD57775A-1A6D-46DB-B633-814EC9784B0F}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{CD7C87CE-68C1-4741-859A-234FD37F8BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD7C87CE-68C1-4741-859A-234FD37F8BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD7C87CE-68C1-4741-859A-234FD37F8BD7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{39B15733-F141-47A1-A75A-A14DAC9AAABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{39B15733-F141-47A1-A75A-A14DAC9AAABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{39B15733-F141-47A1-A75A-A14DAC9AAABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{39B15733-F141-47A1-A75A-A14DAC9AAABB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FD57775A-1A6D-46DB-B633-814EC9784B0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FD57775A-1A6D-46DB-B633-814EC9784B0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD57775A-1A6D-46DB-B633-814EC9784B0F}.Release|Any CPU.ActiveCfg = Release|Any CPU

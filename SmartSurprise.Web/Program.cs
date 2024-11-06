@@ -1,7 +1,14 @@
+using SmartSurprise.Core.Services;
+using SmartSurprise.Core.Services.Contracts;
+using SmartSurprise.Data.Repositories.Contracts;
+using SmartSurprise.Data.Repository;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IGiftService, GiftService>();
+builder.Services.AddScoped<IGiftRepository, GiftRepository>();
 
 var app = builder.Build();
 
