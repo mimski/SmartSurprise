@@ -1,14 +1,28 @@
-﻿namespace SmartSurprise.Data.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace SmartSurprise.Data.Entities;
 
 public class Vote
 {
+    [Key]
     public int Id { get; set; }
-    public int UserId { get; set; }
-    public int GiftId { get; set; }
-    public int PollId { get; set; }
-    public DateTime VoteDate { get; set; }
 
-    public User User { get; set; }
-    public Gift Gift { get; set; }
-    public Poll Poll { get; set; }
+    [Required]
+    public int VotingProcessId { get; set; }
+
+    [ForeignKey(nameof(VotingProcessId))]
+    public VotingProcess VotingProcess { get; set; } = default!;
+
+    [Required]
+    public string VoterId { get; set; } = default!;
+
+    [ForeignKey(nameof(VoterId))]
+    public ApplicationUser Voter { get; set; }= default!;
+
+    [Required]
+    public int GiftId { get; set; }
+
+    [ForeignKey(nameof(GiftId))]
+    public Gift Gift { get; set; } = default!;
 }

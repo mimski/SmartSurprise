@@ -1,12 +1,21 @@
-﻿namespace SmartSurprise.Web.Models;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+
+namespace SmartSurprise.Web.Models;
 
 public class UserViewModel
 {
-    public int Id { get; set; }
+    public string Id { get; set; }
 
+    [Required]
+    [StringLength(100)]
     public string Name { get; set; }
 
-    public DateTime BirthDate { get; set; }
+    [Required]
+    [EmailAddress]
+    public string Email { get; set; }
 
-    public string Username { get; set; }
+    [Required]
+    [DataType(DataType.Date)]
+    public DateTime BirthDate { get; set; }
 }

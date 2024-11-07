@@ -1,14 +1,26 @@
-using SmartSurprise.Core.Services;
-using SmartSurprise.Core.Services.Contracts;
-using SmartSurprise.Data.Repositories.Contracts;
-using SmartSurprise.Data.Repository;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using SmartSurprise.Data;
+using SmartSurprise.Data.Entities;
+using SmartSurprise.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IGiftService, GiftService>();
-builder.Services.AddScoped<IGiftRepository, GiftRepository>();
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.RegisterServices();
 
 var app = builder.Build();
 
@@ -25,6 +37,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<SmartSurprise.Core.Models.GiftModel>
+
+@{
+    ViewData["Title"] = "Gifts";
+}
+
+<h1>Gifts</h1>
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create New Gift</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var gift in Model)
+        {
+            <tr>
+                <td>@gift.Name</td>
+                <td>@gift.Description</td>
+                <td>
+                    <a href="@Url.Action("Details", new { id = gift.Id })" class="btn btn-info">Details</a>
+                    <a href="@Url.Action("Edit", new { id = gift.Id })" class="btn btn-warning">Edit</a>
+                    <a href="@Url.Action("Delete", new { id = gift.Id })" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

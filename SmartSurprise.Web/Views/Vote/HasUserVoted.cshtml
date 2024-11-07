@@ -1,0 +1,23 @@
+﻿@model dynamic
+
+@{
+    ViewData["Title"] = "Voting Status";
+}
+
+<h1>Voting Status</h1>
+
+@if (Model.hasVoted)
+{
+    <p>The user has already voted.</p>
+    <div>
+        <h3>Vote Details</h3>
+        <p><strong>Voter Name:</strong> @Model.vote.VoterName</p>
+        <p><strong>Gift Name:</strong> @Model.vote.GiftName</p>
+    </div>
+}
+else
+{
+    <p>The user has not voted yet.</p>
+}
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back to Home</a>

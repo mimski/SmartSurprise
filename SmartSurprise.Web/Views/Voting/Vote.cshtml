@@ -1,0 +1,19 @@
+﻿@model VoteViewModel
+@{
+    var giftOptions = ViewBag.GiftOptions as IEnumerable<SmartSurprise.Core.Models.GiftModel>;
+}
+
+<h1>Vote for a Gift</h1>
+<form asp-action="Vote">
+    <input type="hidden" asp-for="VotingProcessId" />
+    <div class="form-group">
+        <label for="GiftId">Select a Gift</label>
+        <select asp-for="GiftId" class="form-control">
+            @foreach (var gift in giftOptions)
+            {
+                <option value="@gift.Id">@gift.Name</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Vote</button>
+</form>

@@ -1,0 +1,27 @@
+﻿@model SmartSurprise.Core.Models.VoteModel
+
+@{
+    ViewData["Title"] = "Vote Details";
+}
+
+<h1>Vote Details</h1>
+
+<div>
+    <h3>Voter Information</h3>
+    <p><strong>Voter Name:</strong> @Model.VoterName</p>
+    <p><strong>Voter ID:</strong> @Model.VoterId</p>
+</div>
+
+<div>
+    <h3>Gift Information</h3>
+    <p><strong>Gift Name:</strong> @Model.GiftName</p>
+    <p><strong>Gift ID:</strong> @Model.GiftId</p>
+</div>
+
+<div>
+    <h3>Voting Process Information</h3>
+    <p><strong>Voting Process ID:</strong> @Model.VotingProcessId</p>
+    <p><strong>Vote ID:</strong> @Model.Id</p>
+</div>
+
+<a href="@Url.Action("Index", "Home")" class="btn btn-primary">Back to Home</a>

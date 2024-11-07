@@ -1,0 +1,10 @@
+﻿@model SmartSurprise.Core.Models.VotingProcessModel
+
+<h1>Voting Results</h1>
+<h4>Votes:</h4>
+<ul>
+    @foreach (var vote in Model.Votes)
+    {
+        <li>@vote.VoterId voted for @vote.GiftId</li>
+    }
+</ul>

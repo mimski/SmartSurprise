@@ -7,10 +7,10 @@ public class Gift
     [Key]
     public int Id { get; set; }
 
-    public string Name { get; set; }
+    [Required]
+    [StringLength(100)]
+    public string Name { get; set; } = default!;
 
-    public string Description { get; set; }
-
-    public ICollection<Vote> Votes { get; set; }
+    [StringLength(500)]
+    public string? Description { get; set; }
 }
-

@@ -1,5 +1,7 @@
-﻿namespace SmartSurprise.Data.Repositories.Contracts;
+﻿using SmartSurprise.Data.Entities;
 
-public interface IGiftRepository
+namespace SmartSurprise.Data.Repositories.Contracts;
+
+public interface IGiftRepository : IRepository<Gift>
 {
 }

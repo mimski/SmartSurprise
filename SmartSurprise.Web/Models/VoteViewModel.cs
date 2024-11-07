@@ -1,20 +1,22 @@
-﻿namespace SmartSurprise.Web.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SmartSurprise.Web.Models;
 
 public class VoteViewModel
 {
-    public int Id { get; set; }
+    //public string VoterName { get; set; }
 
-    public int UserId { get; set; }
+    //[Required]
+    //public int GiftId { get; set; }
 
+    //public string GiftName { get; set; }
+
+    [Required]
+    public int VotingProcessId { get; set; }
+
+    [Required]
+    public string VoterId { get; set; } 
+
+    [Required]
     public int GiftId { get; set; }
-
-    public int PollId { get; set; }
-
-    public DateTime VoteDate { get; set; }
-
-    public UserViewModel User { get; set; }
-
-    public GiftViewModel Gift { get; set; }
-
-    public PollViewModel Poll { get; set; }
 }
